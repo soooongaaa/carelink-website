@@ -53,6 +53,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 section{position:relative;z-index:1}
 .sec{padding:112px 0}
+.film-frame{position:relative;max-width:960px;margin:24px auto 0;aspect-ratio:16/9;border-radius:var(--r-lg);
+  overflow:hidden;background:var(--ink);box-shadow:var(--sh-lg);border:1px solid var(--line)}
+.film-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:600px){.film-frame{border-radius:var(--r)}}
 .center{text-align:center}
 .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--mint-700);
   background:rgba(255,255,255,.75);border:1px solid var(--mint-200);padding:7px 15px;border-radius:999px;
@@ -347,6 +351,24 @@ h1{font-size:clamp(34px,5.4vw,60px);font-weight:850;letter-spacing:-.05em;line-h
 .wh b{display:block;font-size:14px;font-weight:850;letter-spacing:-.03em;margin-bottom:6px}
 .wh p{font-size:13px;color:var(--gray);line-height:1.6}
 .ptech{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:34px}
+/* RAG */
+.ragflow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){.ragflow{grid-template-columns:1fr}}
+.ragflow .dp{gap:10px}.ragflow .dsub{margin-bottom:2px}
+.rq{align-self:flex-end;max-width:88%;background:var(--grad);color:#fff;font-size:13.5px;font-weight:700;
+  padding:10px 14px;border-radius:16px 16px 4px 16px}
+.rroute{font-size:12px;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.rroute .dtag{margin:0}
+.rcalc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rcalc div{background:var(--mint-50);border:1px solid var(--mint-100);border-radius:13px;padding:10px;text-align:center}
+.rcalc b{display:block;font-size:18px;font-weight:850;color:var(--mint-700);font-variant-numeric:tabular-nums}
+.rcalc span{font-size:11px;color:var(--gray);font-weight:700}
+.rev{background:var(--mint-50);border:1px solid var(--mint-100);border-radius:13px;padding:11px 13px;font-size:12.5px;
+  color:var(--ink-2);line-height:1.55}
+.rev-h{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:var(--gray);margin-bottom:4px}
+.rev-h span{font-size:9.5px;font-weight:850;color:#fff;background:var(--mint-600);padding:2px 7px;border-radius:6px}
+.ra{align-self:flex-start;max-width:92%;background:#f1f4f3;border:1px solid var(--line);font-size:13.5px;
+  padding:10px 14px;border-radius:16px 16px 16px 4px;line-height:1.55}
 .ptech span{font-size:12px;font-weight:750;padding:8px 15px;border-radius:99px;background:rgba(255,255,255,.8);
   border:1px solid var(--mint-200);color:var(--ink-2);box-shadow:var(--sh-sm);
   transition:all .4s var(--bounce)}
@@ -720,6 +742,19 @@ footer{padding:62px 0 44px}
   </div>
 </div></section>
 
+<!-- 1.4 광고 영상 -->
+<section class="sec film" id="film" style="padding-top:56px;padding-bottom:0"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow rv"><i></i>CARELINK FILM</div>
+  </div>
+  <div class="film-frame rv d1">
+    <iframe src="https://www.youtube-nocookie.com/embed/tqFS5G-7I9A?rel=0&amp;playsinline=1"
+      title="CARELINK 광고 영상" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div></section>
+
 <!-- 1.5 창업 배경 -->
 <section class="sec" id="origin" style="padding-top:56px"><div class="wrap">
   <div class="center">
@@ -773,7 +808,7 @@ footer{padding:62px 0 44px}
 <!-- 2. 문제 -->
 <section class="sec" id="problem" style="padding-top:40px"><div class="wrap">
   <div class="center">
-    <div class="eyebrow rv"><i></i>Part 1 · 문제 인식</div>
+    <div class="eyebrow rv"><i></i>문제 인식</div>
     <h2 class="st rv d1">돌봄 수요는 늘고,<br>가족은 멀어지고 있습니다</h2>
     <p class="sd rv d2">돌봄이 필요한 사람은 늘어나지만, 돌봄을 함께 나눌 가족의 구조는 점점 더 어려워지고 있습니다.</p>
   </div>
@@ -838,7 +873,7 @@ footer{padding:62px 0 44px}
 <!-- 3. 서비스 -->
 <section class="sec" id="service" style="padding-top:40px"><div class="wrap">
   <div class="center">
-    <div class="eyebrow rv"><i></i>Part 4 · 서비스 소개</div>
+    <div class="eyebrow rv"><i></i>서비스 소개</div>
     <h2 class="st rv d1">가족 단톡방에 흘러가던 돌봄 정보를<br>환자 중심의 <span class="tt">공동 기록</span>으로</h2>
     <p class="sd rv d2">간병인은 쉽게 입력하고, AI는 돌봄 데이터로 변환하고, 가족은 같은 화면에서 확인합니다.</p>
   </div>
@@ -890,7 +925,7 @@ footer{padding:62px 0 44px}
 <!-- 4. AI -->
 <section class="sec" id="ai" style="padding-top:40px"><div class="wrap">
   <div class="center">
-    <div class="eyebrow rv"><i></i>Part 5 · AI 기술 적용 전략</div>
+    <div class="eyebrow rv"><i></i>AI 기술 적용 전략</div>
     <h2 class="st rv d1">말 한마디면, <span class="tt">기록이 됩니다</span></h2>
     <p class="sd rv d2">쓰기 어려우면 아무도 쓰지 않습니다. 그래서 입력 단계를 끝까지 덜어냈습니다.</p>
   </div>
@@ -955,10 +990,65 @@ footer{padding:62px 0 44px}
   </div>
 </div></section>
 
+<!-- 4.5 RAG -->
+<section class="sec" id="rag" style="padding-top:40px"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow rv"><i></i>RAG · 기록 기반 질의응답</div>
+    <h2 class="st rv d1">궁금한 건 물어보면, <span class="tt">쌓인 기록이 답합니다</span></h2>
+    <p class="sd rv d2">보호자는 매일 기록을 다 읽을 수 없습니다. 질문 한 줄이면 우리 가족 기록에서 답과 근거를 찾아 보여줍니다.</p>
+  </div>
+
+  <div class="demo rv d1">
+    <div class="ragflow">
+      <div class="dp">
+        <div class="dk"><span class="dkt">몇 번·평균·비교를 물으면</span><span class="dwho">집계</span></div>
+        <div class="dsub">볼 기록이 정해진 질문은 해당 기간 기록을 빠짐없이 셉니다.</div>
+        <div class="rq">지난달에 밤에 몇 번 깨셨어요?</div>
+        <div class="rroute"><span class="dtag">DB 계산</span>8/4 ~ 9/2 · 수면 기록 30일</div>
+        <div class="rcalc">
+          <div><b>12회</b><span>야간 각성</span></div>
+          <div><b>28일</b><span>기록 있음</span></div>
+          <div><b>2일</b><span>기록 없음</span></div>
+        </div>
+        <div class="ra">지난달에는 밤중에 모두 12번 깨셨어요. 이틀은 기록이 남지 않았습니다.</div>
+      </div>
+
+      <div class="dp">
+        <div class="dk"><span class="dkt">언제였는지 모르는 일을 물으면</span><span class="dwho">검색</span></div>
+        <div class="dsub">날짜를 모르는 일은 의미가 가까운 기록을 찾아옵니다.</div>
+        <div class="rq">최근에 넘어지신 적 있나요?</div>
+        <div class="rroute"><span class="dtag">벡터 검색</span>최근 기록에서 관련 내용 찾기</div>
+        <div class="rev">
+          <div class="rev-h"><span>근거</span>9월 14일 · 이동</div>
+          화장실 가시다 한 번 휘청하셨으나 넘어지지는 않으셨습니다.
+        </div>
+        <div class="ra">넘어지신 기록은 없어요. 9월 14일에 한 번 휘청하신 적이 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="dfoot">
+      <div class="dbig">숫자는 <span class="hl">AI가 세지 않고 데이터베이스가 계산</span>합니다.</div>
+      <div class="why3">
+        <div class="wh"><em>🔢</em><b>틀리지 않는 숫자</b>
+          <p>몇 번, 평균, 지난주 대비 같은 질문은 기록 전체를 직접 셉니다. AI는 계산된 값을 문장으로 옮기기만 합니다.</p></div>
+        <div class="wh"><em>📎</em><b>답마다 근거 기록</b>
+          <p>답변에 쓴 실제 기록을 카드로 함께 보여줍니다. 기록이 없는 기간과 해당 일이 없었던 기간도 구분해서 알려드립니다.</p></div>
+        <div class="wh"><em>🔒</em><b>우리 가족 기록 안에서만</b>
+          <p>검색은 언제나 해당 가족방과 환자의 기록 안에서만 이뤄집니다. 검색용으로 저장하는 데이터에서는 이름 같은 식별 정보를 줄입니다.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ptech rv d2">
+    <span>질문 분류 · 집계 / 검색</span><span>pgvector · 기록 임베딩</span><span>근거 카드 · 원본 기록 연결</span>
+    <span>‘기록 없음’과 ‘해당 없음’ 구분</span><span>의료 판단 문구 차단</span>
+  </div>
+</div></section>
+
 <!-- 5. 차별성 -->
 <section class="sec" style="padding-top:40px"><div class="wrap">
   <div class="center">
-    <div class="eyebrow rv"><i></i>Part 6 · 서비스 차별성</div>
+    <div class="eyebrow rv"><i></i>서비스 차별성</div>
     <h2 class="st rv d1">기존 서비스는 ‘관리’에 머물고,<br>CARELINK는 <span class="tt">‘공동 돌봄’</span>을 설계합니다</h2>
   </div>
 
@@ -1014,7 +1104,7 @@ footer{padding:62px 0 44px}
 <!-- 7. 요금제 -->
 <section class="sec" id="plan" style="padding-top:40px"><div class="wrap">
   <div class="center">
-    <div class="eyebrow rv"><i></i>Part 7 · 사업화 전략</div>
+    <div class="eyebrow rv"><i></i>사업화 전략</div>
     <h2 class="st rv d1">가족방으로 시작해<br>기관형 서비스로 확장합니다</h2>
     <p class="sd rv d2">가족 보호자 3명까지는 무료로 쓰고, 필요한 만큼만 확장하는 단계형 구독 구조입니다.</p>
   </div>
